@@ -4,11 +4,16 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/main.css">
         <title>Modified States Display</title>
     </head>
     <body>
-        <input type="file" id="fileInput">
+        <div class="custom-file-input" id="customFileInput">
+            <label for="fileInput">
+                <input type="file" id="fileInput">
+                <div class="custom-file-input-text">Click or drag and drop a file.</div>
+            </label>
+        </div>
 
         <div class="grid" id="main">
             <div class="state-info">
@@ -32,6 +37,6 @@
             <div class="svg-container" id="svgContainer"></div>
         </div>
 
-        <script src="js/index.js"></script>
+        <script src="js/main.js" type="module"></script>
     </body>
 </html>
