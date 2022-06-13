@@ -6,7 +6,7 @@ const stateCapitalTextElement = document.getElementById("stateCapital");
 
 document.addEventListener("click", selectState);
 
-export async function insert(file) {
+export async function insertFile(file) {
     if (!file || file.type != "image/svg+xml") return;
 
     const svgContainer = document.getElementById("svgContainer");
