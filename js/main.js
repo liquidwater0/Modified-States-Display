@@ -1,13 +1,8 @@
-import { realFileInput, customFileInputContainer } from "./customFileInput.js";
+import { customFileInputContainer } from "./fileInput.js";
 
 const stateNameTextElement = document.getElementById("stateName");
 const stateAbbrTextElement = document.getElementById("stateAbbreviation");
 const stateCapitalTextElement = document.getElementById("stateCapital");
-
-realFileInput.addEventListener("input", async ({ target }) => {
-    const file = target.files[0];
-    insert(file);
-});
 
 document.addEventListener("click", selectState);
 
