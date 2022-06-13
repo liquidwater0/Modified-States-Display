@@ -15,10 +15,10 @@ document.addEventListener("click", selectState);
 
 function insert(html) {
     const svgContainer = document.getElementById("svgContainer");
-    const app = document.getElementById("app");
+    const main = document.getElementById("main");
 
     fileInput.style.display = "none";
-    app.style.display = "grid";
+    main.style.display = "grid";
     svgContainer.insertAdjacentHTML("afterbegin", html);
 }
 
