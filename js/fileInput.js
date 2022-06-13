@@ -1,4 +1,4 @@
-import { insert } from "./main.js";
+import { insertFile } from "./main.js";
 
 export const realFileInput = document.getElementById("fileInput");
 export const customFileInputContainer = document.getElementById("customFileInput");
@@ -9,13 +9,13 @@ window.addEventListener("dragover", event => event.preventDefault());
 
 realFileInput.addEventListener("input", ({ target }) => {
     const file = target.files[0];
-    insert(file);
+    insertFile(file);
 });
 
 customFileInput.addEventListener("drop", ({ target, dataTransfer }) => {
     const file = dataTransfer.files[0];
     target.classList.remove("highlighted");
-    insert(file);
+    insertFile(file);
 });
 
 customFileInput.addEventListener("dragover", ({ target }) => {
