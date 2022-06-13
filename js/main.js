@@ -1,25 +1,25 @@
+import { realFileInput, customFileInputContainer } from "./customFileInput.js";
+
 const stateNameTextElement = document.getElementById("stateName");
 const stateAbbrTextElement = document.getElementById("stateAbbreviation");
 const stateCapitalTextElement = document.getElementById("stateCapital");
 
-const fileInput = document.getElementById("fileInput");
-
-fileInput.addEventListener("input", async ({ target }) => {
+realFileInput.addEventListener("input", async ({ target }) => {
     const file = target.files[0];
-    
-    if (!file || file.type != "image/svg+xml") return;
-    insert(await file.text());
+    insert(file);
 });
 
 document.addEventListener("click", selectState);
 
-function insert(html) {
+export async function insert(file) {
+    if (!file || file.type != "image/svg+xml") return;
+
     const svgContainer = document.getElementById("svgContainer");
     const main = document.getElementById("main");
 
-    fileInput.style.display = "none";
+    customFileInputContainer.style.display = "none";
     main.style.display = "grid";
-    svgContainer.insertAdjacentHTML("afterbegin", html);
+    svgContainer.insertAdjacentHTML("afterbegin", await file.text());
 }
 
 function selectState({ target }) {
