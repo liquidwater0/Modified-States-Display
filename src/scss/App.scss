@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+$primary-color-hue: 230;
+$primary-color-saturation: 25%;
+$primary-color-lightness: var(--lightness, 50%);
+
+$primary-color: hsl($primary-color-hue, $primary-color-saturation, $primary-color-lightness);
+$border-color: hsl($primary-color-hue, $primary-color-saturation, 50%);
+
+$state-selected-color: hsl($primary-color-hue, 75%, 50%);
+$state-hover-color: hsl($primary-color-hue, 75%, 75%);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*:not(.material-icons) {
+    font-family: 'Lato', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+#root {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    height: 100%;
+    color: white;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.side-bar {
+    --lightness: 10%;
+    --fs-heading: 2rem;
+    --fs-info-item: 1.5rem;
+    --fs-button: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-color;
+    padding: 25px;
+    border-right: 2px solid $border-color;
+
+    .state-info-heading {
+        text-align: center;
+        font-size: var(--fs-heading);
+    }
+
+    .info-container {
+        width: 100%;
+        margin: auto;
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+            font-size: var(--fs-info-item);
+    
+            .info-text {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .new-file-button {
+        --lightness: 75%;
+        
+        font-size: var(--fs-button);
+        outline: none;
+        border: none;
+        border-radius: 0.5em;
+        padding: 0.75em;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        background-color: $primary-color;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        letter-spacing: 1.1px;
+        user-select: none;
+        transition: background-color 250ms;
+
+        &:hover {
+            --lightness: 65%;
+        }
+    }
+}
+
+.svg-view {
+    --lightness: 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+
+    .real-file-input {
+        display: none;
+    }
+
+    .custom-file-input {
+        --lightness: 33%;
+        $size: 120px;
+        $icon-size: 4rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background-color: $primary-color;
+        width: $size;
+        height: $size;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        transition: background-color 250ms;
+
+        i {
+            font-size: $icon-size;
+        }
+
+        &:hover {
+            --lightness: 30%;
+        }
+    }
+
+    svg {
+        width: 150vh;
+        max-width: 100%;
+
+        g[data-state] {
+            path {
+                cursor: pointer;
+            }
+
+            &:hover {
+                path {
+                    fill: $state-hover-color;
+                }
+            }
+
+            &.selected {
+                path {
+                    fill: $state-selected-color;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1100px) {
+    #root {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .side-bar {
+        --fs-heading: 1.25rem;
+        --fs-info-item: 0.85rem;
+        --fs-button: 1rem;
+    }
+}
+
+@media(max-width: 780px) {
+    #root {
+        grid-template-columns: 1fr;
+    }
+
+    .side-bar {
+        --fs-button: 0.85rem;
+        border: none;
+    }
+}
+
+@media(max-width: 600px) {
+    #root {
+        grid-template-rows: auto 1fr;
+    }
+
+    .side-bar {
+        .info-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0px !important;
+    
+            .info-item {
+                margin: 0px !important;
+    
+                .info-label {
+                    display: none;
+                }
+            }
+        }
+    }
+}
