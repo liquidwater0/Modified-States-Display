@@ -43,6 +43,7 @@ html, body {
 
     display: flex;
     flex-direction: column;
+    // justify-content: space-between;
     background-color: $primary-color;
     padding: 25px;
     border-right: 2px solid $border-color;
@@ -67,6 +68,21 @@ html, body {
             }
         }
     }
+
+    // .state-preview {
+    //     position: relative;
+    //     border: 5px solid $border-color;
+    //     border-radius: 10px;
+    //     aspect-ratio: 1/1;
+    //     overflow: hidden;
+
+    //     svg {
+    //         position: absolute;
+    //         inset: 0;
+    //         width: 100%;
+    //         height: 100%;
+    //     }
+    // }
 
     .new-file-button {
         --lightness: 75%;

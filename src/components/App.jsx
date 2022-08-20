@@ -23,7 +23,7 @@ function App() {
     const { name, abbreviation, capital } = JSON.parse(stateInfo);
 
     unselectAll();
-    setSelectedState({ name: name, abbreviation: abbreviation, capital: capital });
+    setSelectedState({ name: name, abbreviation: abbreviation, capital: capital, shape: state.innerHTML });
     state.classList.add("selected");
   }
 
