@@ -9,6 +9,7 @@ $border-color: hsl($primary-color-hue, $primary-color-saturation, 50%);
 
 $state-selected-color: hsl($primary-color-hue, 75%, 50%);
 $state-hover-color: hsl($primary-color-hue, 75%, 75%);
+$state-border-color: transparent;
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -150,7 +151,7 @@ html, body {
 
         g[data-borders] {
             path {
-                fill: transparent;
+                fill: $state-border-color;
             }
         }
 
