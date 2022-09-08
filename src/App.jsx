@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import '../scss/App.scss';
-import SideBar from './SideBar';
-import SvgView from './SvgView';
+import './scss/App.scss';
+import SideBar from './components/SideBar';
+import SvgView from './components/SvgView';
 
 function App() {
   const [selectedState, setSelectedState] = useState({});

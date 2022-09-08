@@ -43,7 +43,7 @@ html, body {
 
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
+    justify-content: space-between;
     background-color: $primary-color;
     padding: 25px;
     border-right: 2px solid $border-color;
@@ -55,7 +55,6 @@ html, body {
 
     .info-container {
         width: 100%;
-        margin: auto;
 
         .info-item {
             display: flex;
@@ -70,6 +69,7 @@ html, body {
     }
 
     // .state-preview {
+    //     display: grid;
     //     position: relative;
     //     border: 5px solid $border-color;
     //     border-radius: 10px;
@@ -147,6 +147,12 @@ html, body {
     svg {
         width: 150vh;
         max-width: 100%;
+
+        g[data-borders] {
+            path {
+                fill: transparent;
+            }
+        }
 
         g[data-state] {
             path {
