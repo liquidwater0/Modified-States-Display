@@ -12,7 +12,7 @@ export default function SvgView({ hasFile, setHasFile }) {
 
     return (
         <div className='svg-view'>
-            <FileInput insertSVG = {insertSVG} hasFile = {hasFile}/>
+            <FileInput insertSVG={insertSVG} hasFile={hasFile}/>
             <div ref={svgContainer}></div>
         </div>
     )

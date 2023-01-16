@@ -29,8 +29,8 @@ function App() {
 
   return (
     <>
-      <SideBar selectedState = {selectedState} hasFile = {hasFile}/>
-      <SvgView hasFile = {hasFile} setHasFile = {setHasFile}/>
+      <SideBar selectedState={selectedState} hasFile={hasFile}/>
+      <SvgView hasFile={hasFile} setHasFile={setHasFile}/>
     </>
   );
 }
